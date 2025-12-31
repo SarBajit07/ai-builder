@@ -29,7 +29,11 @@
 
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+
+    // NEW: Added for perfect Monaco Editor TypeScript support
+    "types": ["@monaco-editor/loader"],
+    "typeRoots": ["./node_modules/@types", "./node_modules/@monaco-editor"]
   },
 
   "include": [
@@ -38,7 +42,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
+    "**/*.mts",
+    // NEW: Ensure Monaco types are picked up
+    "node_modules/@monaco-editor/loader/**/*.d.ts"
   ],
 
   "exclude": ["node_modules"]

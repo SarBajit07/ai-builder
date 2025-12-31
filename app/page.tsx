@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Cpu, Code2, Rocket } from "lucide-react";
+import Link from "next/link";
+
 
 export default function LandingPage() {
   return (
@@ -79,9 +81,11 @@ export default function LandingPage() {
           <p className="mt-4 text-zinc-400 max-w-xl mx-auto">
             Turn ideas into production-ready applications using modern agentic workflows.
           </p>
-          <Button size="lg" className="mt-8 rounded-2xl bg-emerald-500 hover:bg-emerald-600">
+          <Link href="/builder"><Button size="lg" className="mt-8 rounded-2xl bg-emerald-500 hover:bg-emerald-600">
             Launch Your Project <Rocket className="ml-2 w-5 h-5" />
           </Button>
+          </Link>
+          
         </motion.div>
       </section>
 

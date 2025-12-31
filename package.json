@@ -9,6 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@babel/standalone": "^7.28.5",
+    "@monaco-editor/loader": "^1.7.0",
+    "@monaco-editor/react": "^4.7.0",
     "@prisma/client": "^7.1.0",
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",

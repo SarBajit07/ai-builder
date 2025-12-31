@@ -1,21 +1,35 @@
 "use client";
 
-import TopBar from "./TopBar";
+import { useState } from "react";
 import ChatPanel from "./ChatPanel";
 import PreviewPanel from "./PreviewPanel";
-import PromptBox from "./PromptBox";
+
+export interface ProjectState {
+  frontendFiles: Record<string, string>;
+  backendFiles: Record<string, string>;
+}
 
 export default function BuilderLayout() {
+  const [project, setProject] = useState<ProjectState>({
+    frontendFiles: {},
+    backendFiles: {},
+  });
+
   return (
-    <div className="h-screen w-screen bg-zinc-950 text-zinc-100 flex flex-col">
-      <TopBar />
+    <div className="h-screen w-screen bg-zinc-950 text-white overflow-hidden">
+      <div className="flex h-full">
 
-      <div className="flex flex-1 overflow-hidden">
-        <ChatPanel />
-        <PreviewPanel />
+        {/* Chat Panel */}
+        <div className="w-[320px] border-r border-white/10 flex flex-col">
+          <ChatPanel project={project} setProject={setProject} />
+        </div>
+
+        {/* Preview Panel */}
+        <div className="flex-1">
+          <PreviewPanel project={project} />
+        </div>
+
       </div>
-
-      <PromptBox />
     </div>
   );
 }
